@@ -30,7 +30,7 @@
 
 "use client";
 
-import { Suspense, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import jokes from "@/jokes.json";
 
@@ -52,11 +52,7 @@ const Joke = () => {
     <div className="flex flex-col items-center justify-center min-h-screen py-2">
       <h1 className="text-4xl font-bold mb-4">Here your joke:</h1>
       <p className="text-2xl p-4 border border-gray-300 rounded bg-gray-100 transition duration-500 ease-in-out transform hover:scale-105">
-        <Suspense
-          fallback={<p className="text-center mt-5 px-5">Loading...</p>}
-        >
-          {joke}
-        </Suspense>
+        {joke}
       </p>
     </div>
   );
